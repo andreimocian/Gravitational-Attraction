@@ -1,5 +1,5 @@
 class Body {
-    constructor(distSun, r, mass, initvel, color){
+    constructor(distSun, r, mass, initvel, color, label){
         this.mass = mass;
         this.radius = distSun != 0? r * 100: r;
         this.position = createVector(distSun, 0);
@@ -7,6 +7,7 @@ class Body {
         this.acceleration = createVector(0, 0);
         this.color = color;
         this.g = 0.918;
+        this.label = label;
     }
 
     attract(mover, timeScale) {
@@ -36,5 +37,6 @@ class Body {
         stroke(0);
         fill(this.color);
         ellipse(this.position.x/scale/10, this.position.y/scale/10, 2 * this.radius/scale);
+        text(this.label, this.position.x/scale/10, this.position.y/scale/10);
     }
 }
