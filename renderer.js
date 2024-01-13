@@ -23,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(4, 4, 28);
 
   let scale = scaleSlider.value();
 
